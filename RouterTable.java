@@ -17,8 +17,8 @@ public class RouterTable {
         return this.elements.get(index);
     }
 
-    public void setElement(int index, RouterTableElement element) {
-        this.elements.set(index, element);
+    public void setElement(RouterTableElement e) {
+        this.elements.add(e);
     }
 
 }
