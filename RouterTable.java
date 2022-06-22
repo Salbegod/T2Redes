@@ -17,8 +17,28 @@ public class RouterTable {
         return this.elements.get(index);
     }
 
-    public void setElement(RouterTableElement e) {
+    public void addElement(RouterTableElement e) {
         this.elements.add(e);
     }
+
+    public int getIndexByIp(String ip){
+        for (RouterTableElement element : elements) {
+            if (element.getDestination() == ip ) {
+                return elements.indexOf(element);
+            }
+        }
+        return -1;
+    }
+
+    public ArrayList<RouterTableElement> getAllElements(){
+        return this.elements;
+    }
+
+    @Override
+    public String toString() {
+        return 
+            " elements=" + getAllElements() + "";
+    }
+
 
 }

@@ -16,6 +16,11 @@ public class Node {
         this.gateway = gateway;
     }
 
+    public Node(String mac, String ip) {
+        this.mac = mac;
+        this.ip = ip;
+    }
+
 
     public String getName() {
         return this.name;
@@ -47,6 +52,16 @@ public class Node {
 
     public void setGateway(String gateway) {
         this.gateway = gateway;
+    }
+
+
+    @Override
+    public String toString() {
+        return 
+            " name=" + getName() + "" +
+            ", mac=" + getMac() + "" +
+            ", ip=" + getIp() + "" +
+            ", gateway=" + getGateway() + "\n";
     }
 
 }

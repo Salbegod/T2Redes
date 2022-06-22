@@ -49,4 +49,16 @@ public class RouterTableElement {
         this.port = port;
     }
 
+
+    @Override
+    public String toString() {
+        return 
+            " name=" + getName() + "" +
+            ", destination=" + getDestination() + "" +
+            ", nextHop=" + getNextHop() + "" +
+            ", port=" + getPort() + "\n" 
+           ;
+    }
+
+
 }

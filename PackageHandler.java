@@ -5,25 +5,19 @@ import java.util.ArrayList;
  */
 public class PackageHandler {
 
-    ArrayList<Package> packages;
-
-    public PackageHandler() {
-        this.packages = new ArrayList<Package>();
-    }
-    
-    public static String arpRequest(Package payload) {
+    public static void arpRequest(Package payload) {
 
         Node source = payload.getSource();
         Node destination = payload.getDestination();
 
         String result = "Note over " + source.getName() + 
-        " : ARP Request<br/>Who has" + destination.getIp() + 
+        " : ARP Request<br/>Who has " + destination.getIp() + 
         "? Tell " + source.getIp();
         
-        return result;
+        System.out.println( result);
     }
 
-    public static String arpReply(Package payload) {
+    public static void arpReply(Package payload) {
 
         Node source = payload.getSource();
         Node destination = payload.getDestination();
@@ -31,10 +25,10 @@ public class PackageHandler {
         String result = source.getName() + " ->> " + destination.getName() +
         " : ARP Reply<br/>" + source.getIp() + " is at " + source.getMac();
 
-        return result;
+        System.out.println( result);
     }
 
-    public static String icmpEchoRequest(Package payload) {
+    public static void icmpEchoRequest(Package payload) {
 
         Node source = payload.getSource();
         Node destination = payload.getDestination();
@@ -43,31 +37,31 @@ public class PackageHandler {
         " : ICMP Echo Request<br/>src=" + source.getIp() + 
         " dst=" + destination.getIp() + " ttl=" + payload.getTtl();
         
-        return result;
+        System.out.println( result);
     }
 
-    public static String icmpEchoReply(Package payload) {
+    public static void icmpEchoReply(Package payload) {
 
         Node source = payload.getSource();
         Node destination = payload.getDestination();
 
         String result = source.getName() + " ->> " + destination.getName() +
         " : ICMP Echo Reply<br/>src=" + source.getIp() + 
-        " dst=" + destination.getIp() + " ttl=" + payload.getTtl(); //TTL do destino
+        " dst=" + destination.getIp() + " ttl=" + payload.getTtl();
         
-        return result;
+        System.out.println( result);
     }
 
-    public static String icmpTimeExceeded(Package payload) {
+    public static void icmpTimeExceeded(Package payload) {
 
         Node source = payload.getSource();
         Node destination = payload.getDestination();
 
         String result = source.getName() + " ->> " + destination.getName() +
         " : ICMP Time Exceeded<br/>src=" + source.getIp() + 
-        " dst=" + destination.getIp() + " ttl=" + payload.getTtl(); //TTL do destino
+        " dst=" + destination.getIp() + " ttl=" + payload.getTtl();
         
-        return result;
+        System.out.println( result);
     }
-    
+
 }
